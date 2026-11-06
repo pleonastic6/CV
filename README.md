@@ -2,7 +2,7 @@
 
 Arbeitsstand des Computer-Vision-Bonusprojekts: ROC- und Precision-Recall-Darstellungen anhand zweier **simulierter Scorequellen** vergleichen und den Einfluss der Klassenverteilung untersuchen.
 
-**Status:** Der bisher gemeinsam erarbeitete praktische Versuch ist hier zusammengeführt. Dies ist keine als fertig deklarierte Projektabgabe. Das auf dem Laptop weiterbearbeitete persönliche Notebook wurde noch nicht übernommen; `roc_pr.ipynb` ist eine nachvollziehbare Zusammenführung der vorhandenen Lernschritte mit den bislang verwendeten Daten.
+**Status:** Arturos tatsächlich bearbeitetes Notebook liegt als `01_start.ipynb` im Repo. Nur die veraltete erste/letzte Markdown-Zelle wurden redaktionell korrigiert und eine leere Codezelle entfernt; seine neun nichtleeren Codezellen blieben unverändert. Das unveränderte Original bleibt privat im Projektarchiv, nicht im Repo. `roc_pr.ipynb` ist die bereits zuvor erstellte alternative Zusammenführung derselben Lernschritte. Beide sind ausführbare **Arbeitsstände**, keine als fertig deklarierte Projektabgabe.
 
 ## Einstieg
 
@@ -18,23 +18,24 @@ Arbeitsstand des Computer-Vision-Bonusprojekts: ROC- und Precision-Recall-Darste
    python -m pip install -r requirements-dev.txt
    ```
 
-3. `roc_pr.ipynb` in einem Jupyter-kompatiblen Notebook-Editor öffnen und den Interpreter der `.venv` auswählen. Danach alle Zellen von oben nach unten ausführen.
+3. **Mit `01_start.ipynb` anfangen** – das ist Arturos Notebook. In einem Jupyter-kompatiblen Editor öffnen, den Interpreter der `.venv` auswählen und alle Zellen von oben nach unten ausführen.
 4. Alternativ den vollständigen Notebook-Durchlauf ohne Editor prüfen:
 
    ```bash
    python tools/check_notebook.py
    ```
 
-   Dabei wird ein neuer Python-Kernel gestartet. Die geprüfte Ausgabe wird unter `build/roc_pr.executed.ipynb` gespeichert; das versionierte Notebook bleibt unverändert.
+   Dabei werden **beide** Notebooks nacheinander in jeweils einem neuen Python-Kernel geprüft. Die geprüften Ausgaben werden unter `build/` gespeichert; die versionierten Notebooks bleiben unverändert.
 
 ## Inhalt
 
-- `roc_pr.ipynb`: zusammengeführter Versuch mit Erklärungen, Code und tatsächlich ausgeführten Ausgaben.
+- `01_start.ipynb`: Arturos geprüftes Notebook mit seinen unveränderten Codezellen und korrigiertem Einleitungs-/Schlusstext; **dies ist der Einstieg**.
+- `roc_pr.ipynb`: die zuvor von Vesper zusammengeführte Alternative mit zusätzlichen Erklärungen und Regressionsprüfungen. **Nicht parallel als zweite Lösung bearbeiten.**
 - `lernzellen/`: ursprüngliches Start-Notebook und unveränderte einzelne Python-Lernzellen. Die `.py`-Dateien sind **Notebook-Zellen**, keine unabhängig startbaren Programme; sie verwenden Variablen aus den vorherigen Schritten.
 - `figures/`: bereits erzeugte PNG-Grafiken der Lernschritte. Die aktuellen Grafiken können zusätzlich direkt im zusammengeführten Notebook erzeugt werden.
 - `requirements.txt`: geprüfte Versionen der beiden direkten Analyseabhängigkeiten.
 - `requirements-dev.txt`: zusätzlich die Werkzeuge für Notebook-Kernel und automatisierten Durchlauf. Kein vollständiger plattformübergreifender Lockfile.
-- `tools/check_notebook.py`: strukturelle Validierung und echter sauberer Kernel-Durchlauf; die letzte Notebook-Zelle überprüft die bekannten Versuchsergebnisse.
+- `tools/check_notebook.py`: strukturelle Validierung und echte saubere Kernel-Durchläufe beider Notebooks; vergleicht die vier AUC/AP-Ausgaben mit den bekannten Werten und prüft die Accuracy-Baseline.
 
 ## Versuchsaufbau
 
@@ -53,6 +54,6 @@ Average Precision wird mit `average_precision_score` berechnet. Sie wird nicht a
 - Die ursprüngliche Verteilung ist 3/8 positiv und damit nicht exakt ausgeglichen.
 - Die im Kontrollversuch identischen ROC-Punkte entstehen durch die erhaltenen klassenbedingten Scoreverteilungen. Eine beliebige neue Stichprobe muss nicht dieselbe ROC ergeben.
 - PR zeigt hier einzelne gemessene Schwellenpunkte; diese werden nicht künstlich geglättet.
-- Noch offen: persönliches aktuelles Notebook abgleichen, Anwendungsempfehlung gemeinsam begründen, Grenzen/Quellen final ausarbeiten sowie Dokumentation und Präsentation fertigstellen.
+- Noch offen: Anwendungsempfehlung gemeinsam begründen, Grenzen/Quellen final ausarbeiten sowie Dokumentation und Präsentation fertigstellen.
 
 Die Inhalte wurden mit KI-Unterstützung schrittweise erarbeitet. Vor einer Abgabe müssen die Beteiligten die Schritte nachvollziehen, fachlich prüfen und gemäß den Kursregeln dokumentieren. Vorlesungsunterlagen, Kurszugänge, virtuelle Umgebungen und persönliche Notizen sind nicht Bestandteil dieses Repositories.
